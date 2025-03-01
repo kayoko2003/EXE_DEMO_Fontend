@@ -1,0 +1,65 @@
+plugins {
+    id 'org.springframework.boot' version '3.2.2'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'java'
+    id 'war'
+}
+
+group = 'org'
+version = '1.0-SNAPSHOT'
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    // Spring Boot Web (bao gồm Embedded Tomcat)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Hỗ trợ JSP: Tomcat Embedded Jasper
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+
+    // Hỗ trợ JSTL cho JSP
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0'
+
+    // Apache HttpClient và Fluent HC để xử lý HTTP requests
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'org.apache.httpcomponents:fluent-hc:4.5.13'
+
+    // Gson cho xử lý JSON
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Thư viện org.json
+    implementation 'org.json:json:20240303'
+
+    // JavaMail API (dành cho gửi email)
+    implementation 'com.sun.mail:javax.mail:1.6.2'
+
+    // JPA API và Hibernate cho ORM
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'org.hibernate:hibernate-core:5.6.15.Final'
+    implementation 'org.hibernate:hibernate-validator:6.1.0.Final'
+
+    // JDBC Driver cho SQL Server
+    implementation 'com.microsoft.sqlserver:mssql-jdbc:12.3.0.jre17-preview'
+
+    // Nếu cần Jakarta MVC API (chỉ compileOnly vì không triển khai)
+    compileOnly 'jakarta.mvc:jakarta.mvc-api:2.0.0'
+
+    // Dependencies cho test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+}
+
+test {
+    useJUnitPlatform()
+}
