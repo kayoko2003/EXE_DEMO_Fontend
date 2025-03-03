@@ -19,6 +19,7 @@ public class LoginController extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         String userName = req.getParameter("username");

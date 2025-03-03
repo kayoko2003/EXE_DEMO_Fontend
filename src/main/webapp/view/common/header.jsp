@@ -78,154 +78,52 @@ position: sticky; top:0; z-index: 999">
 
                 <!-- Collapsible wrapper -->
                 <div class="collapse navbar-collapse" id="navbarButtonsExample">
-                    <!-- Left links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <c:if test="${sessionScope.account.role.id == 1}">
-                            <li class="nav-item">
-                                <a class="nav-link" href="<%=url%>/Home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<%=url%>/Search_Skills">Search</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<%=url%>/mentee/schedule">Schedule</a>
-                            </li>
-
+                            <li class="nav-item"><a class="nav-link" href="<%=url%>/Home">Trang chủ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<%=url%>/Search_Skills">Tìm kiếm</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<%=url%>/mentee/schedule">Lịch trình</a></li>
                         </c:if>
                         <c:if test="${sessionScope.account.role.id == 2}">
-                            <li class="nav-item">
-                                <a class="nav-link" href="<%=url%>/Home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<%=url%>/mentor/update_profile">Update CV</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<%=url%>/mentor/schedule">Schedule</a>
-                            </li>
-
-
+                            <li class="nav-item"><a class="nav-link" href="<%=url%>/Home">Trang chủ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<%=url%>/mentor/update_profile">Cập nhật CV</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<%=url%>/mentor/schedule">Lịch trình</a></li>
                         </c:if>
                         <c:if test="${sessionScope.account.role.id == 3}">
-                            <li class="nav-item">
-                                <a class="nav-link" href="<%=url%>/admin/dash">Dash Board</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<%=url%>/admin/mentor">Manage</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<%=url%>/Search_Skills">Search Skills</a>
-                            </li>
-                        </c:if>
-                        <c:if test="${sessionScope.account.role.id == 4}">
-                            <li class="nav-item">
-                                <a class="nav-link" href="<%=url%>/admin/mentor">Manage</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<%=url%>/Search_Skills">Search Skills</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="<%=url%>/admin/dash">Bảng điều khiển</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<%=url%>/admin/mentor">Quản lý</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<%=url%>/Search_Skills">Tìm kiếm kỹ năng</a></li>
                         </c:if>
                     </ul>
-                    <!-- Left links -->
 
                     <c:if test="${sessionScope.account==null}">
                         <div class="d-flex align-items-center">
-                            <button data-mdb-ripple-init type="button" class="btn px-3 me-2" style='background-color: #07ad90;'>
-                                <a href="<%=url%>/login" style="text-decoration: none">Sign in </a>
+                            <button class="btn px-3 me-2" style='background-color: #07ad90;'>
+                                <a href="<%=url%>/login" style="text-decoration: none">Đăng nhập</a>
                             </button>
-                            <button data-mdb-ripple-init type="button" class="btn me-3" style='background-color: #07ad90;'>
-                                <a href="<%=url%>/register" style="text-decoration: none">Sign up for free</a>
+                            <button class="btn me-3" style='background-color: #07ad90;'>
+                                <a href="<%=url%>/register" style="text-decoration: none">Đăng ký miễn phí</a>
                             </button>
                         </div>
                     </c:if>
                     <c:if test="${sessionScope.account!=null}">
                         <div class="d-flex align-items-center">
-                            <div>
-                                <span style="color: #07ad90"> ${sessionScope.account.userName}</span>
-                            </div>
-                            <!-- Avatar -->
+                            <div><span style="color: #07ad90"> ${sessionScope.account.userName}</span></div>
                             <div class="dropdown">
-                                <a
-                                        data-mdb-dropdown-init
-                                        class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                                        href="#"
-                                        id="navbarDropdownMenuAvatar"
-                                        role="button"
-                                        aria-expanded="false"
-                                >
-                                <c:if test="${sessionScope.account.avatar == null}">
-                                            <img
-                                                    src="https://www.logolynx.com/images/logolynx/4b/4beebce89d681837ba2f4105ce43afac.png"
-                                                    class="rounded-circle"
-                                                    height="25"
-                                                    alt="Logo user"
-                                                    loading="lazy"
-                                            />
-                                </c:if>
+                                <a data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
+                                    <c:if test="${sessionScope.account.avatar == null}">
+                                        <img src="https://www.logolynx.com/images/logolynx/4b/4beebce89d681837ba2f4105ce43afac.png" class="rounded-circle" height="25" alt="Ảnh đại diện" loading="lazy"/>
+                                    </c:if>
                                     <c:if test="${sessionScope.account.avatar != null}">
-                                        <img
-                                                src="${pageContext.request.contextPath}/${sessionScope.account.avatar}"
-                                                class="rounded-circle"
-                                                height="25"
-                                                alt="Logo user"
-                                                loading="lazy"
-                                        />
+                                        <img src="${pageContext.request.contextPath}/${sessionScope.account.avatar}" class="rounded-circle" height="25" alt="Ảnh đại diện" loading="lazy"/>
                                     </c:if>
                                 </a>
-                                <ul
-                                        class="dropdown-menu dropdown-menu-end"
-                                        aria-labelledby="navbarDropdownMenuAvatar"
-                                >
-                                    <li>
-                                        <c:if test="${sessionScope.account.role.id == 1}">
-                                        <a class="dropdown-item" href="<%=url%>/mentee/profile?menteeid=${sessionScope.account.id}">Information</a>
-                                        </c:if>
-                                        <c:if test="${sessionScope.account.role.id == 2}">
-                                            <a class="dropdown-item" href="<%=url%>/mentor/profile?mentorid=${sessionScope.account.id}">Information</a>
-                                        </c:if>
-                                    </li>
-                                    <li>
-                                        <c:if test="${sessionScope.account.role.id == 1}">
-                                            <a class="dropdown-item" href="<%=url%>/mentee/update">Settings</a>
-                                        </c:if>
-                                        <c:if test="${sessionScope.account.role.id == 2}">
-                                            <a class="dropdown-item" href="<%=url%>/mentor/update_profile">Settings</a>
-                                        </c:if>
-                                    </li>
-                                    <c:if test="${sessionScope.account.role.id == 1}">
-                                    <li>
-                                        <a class="dropdown-item" href="<%=url%>/mentee/viewBooking">Bookings</a>
-                                    </li>
-                                        <li>
-                                            <a class="dropdown-item" href="<%=url%>/wallet/view">Wallet</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="<%=url%>/changePass">Change Password</a>
-                                        </li>
-                                    </c:if>
-                                    <c:if test="${sessionScope.account.role.id == 1}">
-                                        <li>
-                                            <a class="dropdown-item" href="<%=url%>/mentee/dashboard">Dash Board</a>
-                                        </li>
-                                    </c:if>
-                                    <c:if test="${sessionScope.account.role.id == 2}">
-                                        <li>
-                                            <a class="dropdown-item" href="<%=url%>/mentor/view_follower">Follower</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="<%=url%>/wallet/view">Wallet</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="<%=url%>/changePass">Change Password</a>
-                                        </li>
-                                    </c:if>
-                                    <li>
-                                        <a class="dropdown-item" href="<%=url%>/logout">Logout</a>
-                                    </li>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                                    <li><a class="dropdown-item" href="<%=url%>/changePass">Đổi mật khẩu</a></li>
+                                    <li><a class="dropdown-item" href="<%=url%>/logout">Đăng xuất</a></li>
                                 </ul>
                             </div>
                         </div>
-
-
                     </c:if>
                 </div>
                 <!-- Collapsible wrapper -->

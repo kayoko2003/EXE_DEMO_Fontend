@@ -65,14 +65,12 @@
 <jsp:include page="../common/header.jsp"></jsp:include>
 
 <section class="banner">
-    <img src="${pageContext.request.contextPath}/img/home/i1.png" class="active">
-    <img src="${pageContext.request.contextPath}/img/home/i2.png">
-    <img src="${pageContext.request.contextPath}/img/home/i3.png">
-    <img src="${pageContext.request.contextPath}/img/home/img4.png">
+    <img src="${pageContext.request.contextPath}/img/home/1.png" class="active">
+    <img src="${pageContext.request.contextPath}/img/home/2.png">
 </section>
 
 <div class="show-top-mentor">
-    <h1>Top Mentor</h1>
+    <h1>Top Gia sư</h1>
     <div class="wrapper">
         <i id="left" class="fa-solid fa-angle-left angle"></i>
         <ul class="carousel">
@@ -96,60 +94,30 @@
 </div>
 
 <div class="stakeholder">
-    <h2>Businesses have accompanied us</h2>
-    <h4>200+ businesses, non-governmental organizations and student clubs</h4>
+    <h2>Doanh nghiệp đồng hành</h2>
+    <h4>Hơn 200 doanh nghiệp, tổ chức phi chính phủ và câu lạc bộ sinh viên</h4>
     <div class="img">
         <img src="${pageContext.request.contextPath}/img/stakeholder.jpg">
     </div>
 </div>
-
 <div class="benefit">
-    <h5>Benefit</h5>
-    <h3>What you get when studying at Frog Community</h3>
+    <h5>Lợi ích</h5>
+    <h3>Những gì bạn nhận được khi học tại Frog Community</h3>
     <div class="row detail">
         <div class="col-md-4">
-            <div class="i">
-                <i class="fa-solid fa-thumbs-up" style="color: #63E6BE;"></i>
-            </div>
-            <h4>Reputable Mentor</h4>
-            <h6>Mentor from top universities, large companies and enterprises</h6>
+            <div class="i"><i class="fa-solid fa-thumbs-up" style="color: #63E6BE;"></i></div>
+            <h4>Gia sư uy tín</h4>
+            <h6>Gia sư đến từ các trường đại học hàng đầu, công ty lớn</h6>
         </div>
         <div class="col-md-4">
-            <div class="i">
-                <i class="fa-solid fa-book" style="color: #63E6BE;"></i>
-            </div>
-            <h4>Methodical roadmap</h4>
-            <h6>Perfected through many years of teaching</h6>
+            <div class="i"><i class="fa-solid fa-book" style="color: #63E6BE;"></i></div>
+            <h4>Lộ trình bài bản</h4>
+            <h6>Được xây dựng qua nhiều năm giảng dạy</h6>
         </div>
         <div class="col-md-4">
-            <div class="i">
-                <i class="fa-solid fa-users" style="color: #63E6BE;"></i>
-            </div>
-            <h4>Exchange and share knowledge</h4>
-            <h6>The system connects learners on a large scale, easily exchanging knowledge</h6>
-        </div>
-    </div>
-    <div class="row detail">
-        <div class="col-md-4">
-            <div class="i">
-                <i class="fa-solid fa-earth-americas" style="color: #63E6BE;"></i>
-            </div>
-            <h4>Connect with a team of mentors</h4>
-            <h6>Intensive 1:1 mentoring opportunity with mentors from many fields, rich in experience</h6>
-        </div>
-        <div class="col-md-4">
-            <div class="i">
-                <i class="fa-solid fa-briefcase" style="color: #63E6BE;"></i>
-            </div>
-            <h4>Practical knowledge</h4>
-            <h6>In accordance with the requirements of businesses and employers</h6>
-        </div>
-        <div class="col-md-4">
-            <div class="i">
-                <i class="fa-regular fa-calendar-days" style="color: #63E6BE;"></i>
-            </div>
-            <h4>Flexible plan</h4>
-            <h6>Flexible hours at your discretion</h6>
+            <div class="i"><i class="fa-solid fa-users" style="color: #63E6BE;"></i></div>
+            <h4>Kết nối & chia sẻ</h4>
+            <h6>Kết nối với cộng đồng học viên rộng lớn</h6>
         </div>
     </div>
 </div>
@@ -158,37 +126,20 @@
     <div class="section-container footer-container">
         <div class="footer-col">
             <h3>FROG COMMUNITY</h3>
-            <p>
-                Frog Community is a page for booking mentor that offers a seamless and
-                convenient way to find and book mentor in the world.
-            </p>
-            <p>
-                With a team of experienced mentors, spanning many generations of students,
-                we are committed to ensuring you will have full knowledge and a systematic
-                roadmap to help you grasp the times, technology and knowledge. In addition,
-                we also provide a strict confidentiality regime, creating trust for mentees
-                when looking for mentors.
-            </p>
+            <p>Frog Community là nền tảng đặt lịch học với gia sư một cách thuận tiện và dễ dàng.</p>
         </div>
         <div class="footer-col">
-            <h4>Company</h4>
-            <p>About Us</p>
-            <p>Our Team</p>
+            <h4>Công ty</h4>
+            <p>Về chúng tôi</p>
+            <p>Đội ngũ</p>
             <p>Blog</p>
-            <p>Book</p>
-            <p>Contact Us</p>
+            <p>Liên hệ</p>
         </div>
         <div class="footer-col">
-            <h4>Legal</h4>
-            <p>FAQs</p>
-            <p>Terms & Conditions</p>
-            <p>Privacy Policy</p>
-        </div>
-        <div class="footer-col">
-            <h4>Resources</h4>
-            <p>Social Media</p>
-            <p>Help Center</p>
-            <p>Partnerships</p>
+            <h4>Pháp lý</h4>
+            <p>Câu hỏi thường gặp</p>
+            <p>Điều khoản</p>
+            <p>Chính sách bảo mật</p>
         </div>
     </div>
 </footer>

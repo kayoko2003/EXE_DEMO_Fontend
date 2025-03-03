@@ -163,10 +163,10 @@
     <div class="d-flex main">
         <div class="schedule">
             <div>
-                <h1 style="text-align: center; color: #07AD90;">Schedule</h1>
+                <h1 style="text-align: center; color: #07AD90;">Lịch trình</h1>
                 <div class="notess">
-                    <div><i class="fa-solid fa-square" style="color: #FFF142FF;"></i> is a session not start</div>
-                    <div><i class="fa-solid fa-square" style="color: #FAAD12FF; margin-left: 20px"></i> is attended or not attended</div>
+                    <div><i class="fa-solid fa-square" style="color: #FFF142FF;"></i> là buổi học chưa bắt đầu</div>
+                    <div><i class="fa-solid fa-square" style="color: #FAAD12FF; margin-left: 20px"></i> là đã tham gia hoặc không tham gia</div>
                 </div>
             </div>
 
@@ -181,68 +181,67 @@
                     </c:forEach>
                 </tr>
                 <tr>
-                    <th>Slot</th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                    <th>Sunday</th>
+                    <th>Ca học</th>
+                    <th>Thứ Hai</th>
+                    <th>Thứ Ba</th>
+                    <th>Thứ Tư</th>
+                    <th>Thứ Năm</th>
+                    <th>Thứ Sáu</th>
+                    <th>Thứ Bảy</th>
+                    <th>Chủ Nhật</th>
                 </tr>
 
                 </thead>
                 <tbody style="border: 1px #07AD90 solid">
                 <c:forEach items="${requestScope.slots}" var="slot">
-                <tr>
-                    <td>
-                        <span>Slots ${slot.id}</span>
-                        <br/>
-                            ${slot.start_at}-${slot.end_at}
-                    </td>
-                    <c:forEach items="${requestScope.week}" var="date">
-                    <td>
-                        <div class="notes-container text-center ">
-                            <c:forEach items="${requestScope.bookingSchedules}" var="bs">
-                            <c:if test="${ (bs.schedule.slot.id == slot.id) && (bs.schedule.date == date) }">
-                                <c:if test="${bs.status.id == 3}">
-                                    <i class="pin"></i>
-                                    <blockquote class="notes color-note font-monospace" style="background-color: #FAAD12FF; text-align: start">
-                                        <span style="font-size: 14px">${bs.booking.mentor.account.name}</span>
-                                        <img width="30px" class="mt-2" src="${pageContext.request.contextPath}/${bs.booking.level_skills.skill.src_icon}">
-                                        <div style="font-size: 16px">
-                                            <span>${bs.booking.level_skills.level.name}</span>
-                                        </div>
-                                        <span style="font-size: 16px">${bs.attend ? "Attend" : "Not attend"}</span>
-                                    </blockquote>
-                                </c:if>
+                    <tr>
+                        <td>
+                            <span>Ca ${slot.id}</span>
+                            <br/>
+                                ${slot.start_at}-${slot.end_at}
+                        </td>
+                        <c:forEach items="${requestScope.week}" var="date">
+                            <td>
+                                <div class="notes-container text-center ">
+                                    <c:forEach items="${requestScope.bookingSchedules}" var="bs">
+                                    <c:if test="${ (bs.schedule.slot.id == slot.id) && (bs.schedule.date == date) }">
+                                    <c:if test="${bs.status.id == 3}">
+                                        <i class="pin"></i>
+                                        <blockquote class="notes color-note font-monospace" style="background-color: #FAAD12FF; text-align: start">
+                                            <span style="font-size: 14px">${bs.booking.mentor.account.name}</span>
+                                            <img width="30px" class="mt-2" src="${pageContext.request.contextPath}/${bs.booking.level_skills.skill.src_icon}">
+                                            <div style="font-size: 16px">
+                                                <span>${bs.booking.level_skills.level.name}</span>
+                                            </div>
+                                            <span style="font-size: 16px">${bs.attend ? "Đã tham gia" : "Không tham gia"}</span>
+                                        </blockquote>
+                                    </c:if>
 
-                                <c:if test="${bs.status.id == 11}">
-                                    <i class="pin"></i>
-                                    <blockquote class="notes color-note font-monospace" style="background-color: #FFF142FF; text-align: start">
-                                        <span style="font-size: 14px">${bs.booking.mentor.account.name}</span>
-                                        <img width="30px" class="mt-2" src="${pageContext.request.contextPath}/${bs.booking.level_skills.skill.src_icon}">
-                                        <div style="font-size: 16px">
-                                            <span>${bs.booking.level_skills.level.name}</span>
-                                        </div>
-                                        <span style="font-size: 16px">${bs.attend ? "Attend" : "Not attend"}</span>
-                                    </blockquote>
+                                    <c:if test="${bs.status.id == 11}">
+                                        <i class="pin"></i>
+                                        <blockquote class="notes color-note font-monospace" style="background-color: #FFF142FF; text-align: start">
+                                            <span style="font-size: 14px">${bs.booking.mentor.account.name}</span>
+                                            <img width="30px" class="mt-2" src="${pageContext.request.contextPath}/${bs.booking.level_skills.skill.src_icon}">
+                                            <div style="font-size: 16px">
+                                                <span>${bs.booking.level_skills.level.name}</span>
+                                            </div>
+                                            <span style="font-size: 16px">${bs.attend ? "Đã tham gia" : "Không tham gia"}</span>
+                                        </blockquote>
+                                    </c:if>
+                                </div>
                                 </c:if>
-                        </div>
-                        </c:if>
+                                </c:forEach>
+                            </td>
                         </c:forEach>
-        </td>
-        </c:forEach>
-        </tr>
-        </c:forEach>
-        </tbody>
-        </table>
-    </div>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
     </div>
 </form>
+
 <script>
-
-
     function changeDate() {
         document.getElementById('frm').submit();
     }

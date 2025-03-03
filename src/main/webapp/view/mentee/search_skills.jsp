@@ -28,14 +28,14 @@
 <body >
 <jsp:include page="../common/header.jsp"></jsp:include>
 <div class="banner">
-    <img src="${pageContext.request.contextPath}/img/Banner.png" alt="Logo"/>
+    <img src="${pageContext.request.contextPath}/img/banner1.jpg" alt="Logo"/>
 </div>
 <div class="container main">
 
     <div class="search-container">
         <div class="search-box">
             <label>
-                <input type="text" class="search-input" id="search" placeholder="Search skills..." value="${requestScope.name}"/>
+                <input type="text" class="search-input" id="search" placeholder="Tìm kiếm kỹ năng..." value="${requestScope.name}"/>
             </label>
             <button class="search-btn" onclick="searchHandler()">
                 <i class="fas fa-search fa-sm"></i>
@@ -47,7 +47,7 @@
         <div class="skill">
             <div class="side">
                 <div class="level-container">
-                    <h4><span class="title_level">Level</span></h4>
+                    <h4><span class="title_level">Cấp độ</span></h4>
                     <hr>
                     <ul class="list-level" id="listLevel">
                         <c:forEach items="${requestScope.list_level}" var="level">

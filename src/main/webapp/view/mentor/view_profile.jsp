@@ -303,61 +303,63 @@
             <div class="card mb-4 my-account">
                 <div class="card-body">
                     <div class="taskbar">
-                        <h3>My account</h3>
+                        <h3>Tài khoản của tôi</h3>
                         <c:choose>
                             <c:when test="${requestScope.isAuthor}">
-                                <button onclick="goToUpdate()" type="button" class="btn btn-info" data-mdb-ripple-init>Update Profile</button>
+                                <button onclick="goToUpdate()" type="button" class="btn btn-info" data-mdb-ripple-init>Cập nhật hồ sơ</button>
                             </c:when>
                             <c:otherwise>
-                                <button type="button" class="btn btn-warning" data-mdb-ripple-init>Message</button>
+                                <button type="button" class="btn btn-warning" data-mdb-ripple-init>Nhắn tin</button>
                             </c:otherwise>
                         </c:choose>
-                        <button onclick="showCV()" type="button" class="btn btn-success" data-mdb-ripple-init>View CV</button>
+                        <button onclick="showCV()" type="button" class="btn btn-success" data-mdb-ripple-init>Xem CV</button>
                     </div>
                     <hr>
-                    <h5>User information</h5>
+                    <h5>Thông tin người dùng</h5>
                     <div class="row">
                         <div class="col">
-                            <label class="name">Full Name</label>
+                            <label class="name">Họ và tên</label>
                             <p>${requestScope.mentor.account.name}</p>
                         </div>
                         <div class="col">
-                            <label class="dob">Date of birth</label>
+                            <label class="dob">Ngày sinh</label>
                             <p>${requestScope.mentor.account.dob}</p>
                         </div>
                         <div class="col">
-                            <label class="gender">Gender</label>
-                            <p><c:choose>
-                                <c:when test="${requestScope.mentor.account.gender == 1}">
-                                    Male
-                                </c:when>
-                                <c:otherwise>
-                                    Female
-                                </c:otherwise>
-                            </c:choose></p>
+                            <label class="gender">Giới tính</label>
+                            <p>
+                                <c:choose>
+                                    <c:when test="${requestScope.mentor.account.gender == 1}">
+                                        Nam
+                                    </c:when>
+                                    <c:otherwise>
+                                        Nữ
+                                    </c:otherwise>
+                                </c:choose>
+                            </p>
                         </div>
                     </div>
                     <hr>
-                    <h5>Contact information</h5>
+                    <h5>Thông tin liên hệ</h5>
                     <div class="row">
                         <div class="col">
                             <label class="email">Email</label>
                             <p>${requestScope.mentor.account.email}</p>
                         </div>
                         <div class="col">
-                            <label class="phone">Phone</label>
+                            <label class="phone">Số điện thoại</label>
                             <p>${requestScope.mentor.account.phone}</p>
                         </div>
                         <div class="col">
-                            <label class="address">Address</label>
+                            <label class="address">Địa chỉ</label>
                             <p>${requestScope.mentor.account.address}</p>
                         </div>
                     </div>
                     <hr>
-                    <h5>About me</h5>
+                    <h5>Giới thiệu bản thân</h5>
                     <p>${requestScope.mentor.profileDetail}</p>
                     <hr>
-                    <h5>My Skills</h5>
+                    <h5>Kỹ năng của tôi</h5>
                     <div class="skills-container">
                         <c:forEach items="${requestScope.level_skills}" var="s">
                             <div class="skill-item" style="cursor: pointer" onclick="bookingHandle('${requestScope.id}','${s.skill.name}','${s.level.name}','${account.role.id}')">
@@ -416,7 +418,7 @@
             </div>
             <div class="card mb-4 feedback">
                 <div class="card-body">
-                    <h5>Feedback</h5>
+                    <h5>Đánh giá</h5>
                     <ul class="feedback-list">
                         <c:forEach items="${requestScope.review}" var="r">
                             <li class="feedback-item">
